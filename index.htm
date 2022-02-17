@@ -46,44 +46,39 @@
                   <!-- Income Field -->
                   <div>
                       <h4 class="text-center fw-bold py-2">Income</h3>
-                      <p class="text-end pe-5"><span >Income: </span> <input type="text" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded"></p>
+                      <p class="text-end pe-5"><span >Income: </span> <input type="text" id="income-balance" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded"></p>
                   </div>
 
                   <!-- Expenses Field -->
                   <div >
                       <h4 class="text-center fw-bold">Expenses</h3>
                       <p class="text-end pe-5">
-                        <span class="">Food: </span> <input type="text" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded">
+                        <span class="">Food: </span> <input type="text" id="foodField" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded">
                       </p>
                       <p class="text-end pe-5">
-                        <span >Rent: </span> <input type="text" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded">
+                        <span >Rent: </span> <input type="text" id="rentField" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded">
                       </p>
                       <p class="text-end pe-5">
-                        <span >Clothes: </span> <input type="text" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded">
+                        <span >Clothes: </span> <input type="text" id="clotheField" class="bb-bg-light p-1 ms-2 my-2 border border-light w-lg-75 w-50 rounded">
                       </p>
                   </div>
 
                   <!-- After Expense Calculation -->
-                  <div>
-                      <button type="button" class="btn btn-primary fw-bold my-3 px-5"> Calculate </button>
-                      <h4 class="fw-bold py-3">Total Expenses: <span id=""></span></h4>
-                      <h4 class="fw-bold py-3">Balance: <span id=""></span></h4>
-                  </div>
+                  <button type="button" class="btn btn-primary fw-bold my-3 px-5" onclick="expenceCalculation()"> Calculate </button>
+                  <h4 class="fw-bold py-3">Total Expenses: <span id="total-expenses"></span></h4>
+                  <h4 class="fw-bold py-3">Balance: <span id="balance"></span></h4>
 
                   <!-- Saving Parcentage Field -->
                   <div>
-                    <p class="text-center"><span>Save: </span> <input type="text" class="bb-bg-light p-1 ms-2 my-2 mx-2 border border-light text-center w-25">
+                    <p class="text-center"><span>Save: </span> <input type="text" id="save-money" class="bb-bg-light p-1 ms-2 my-2 mx-2 border border-light text-center w-25">
                       <span> % </span>
-                      <button type="button" class="btn btn-primary fw-bold my-2 px-lg-5 px-md-5 px-4 mx-2"> Save </button>
+                      <button type="button" onclick="saveMoneyCalculation()" class="btn btn-primary fw-bold my-1 px-lg-5 px-md-5 px-4 mx-2"> Save </button>
                     </p>
                   </div>
 
                   <!-- After Parcentage Calculation -->
-                  <div>
-                      <h4 class="fw-bold my-2 py-2">Saving Amount: <span id=""></span></h4>
-                      <h4 class="fw-bold my-2 py-2">Remaining Balance: <span id=""></span></h4>
-                  </div>
-
+                  <h4 class="fw-bold my-2 py-2">Saving Amount: <span id="save-money-show"></span></h4>
+                  <h4 class="fw-bold my-2 py-2">Remaining Balance: <span id="remainingBalance-show"></span></h4>
               </div>
             </div>
           </div>
@@ -104,4 +99,5 @@
       crossorigin="anonymous"
     ></script>
   </body>
+
 </html>
