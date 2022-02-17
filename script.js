@@ -77,8 +77,11 @@ function expenceCalculation() {
   const rentExpense = elementValue("rentField");
   const clotheExpense = elementValue("clotheField");
 
+  // Income
+  const income = elementValue("income-balance");
+
   // Error Chacking
-  const error = errorChecking(foodExpense, rentExpense, clotheExpense);
+  const error = errorChecking(income, foodExpense, rentExpense, clotheExpense);
 
   if (error == false) {
     // Total Expences
@@ -88,7 +91,6 @@ function expenceCalculation() {
       parseFloat(clotheExpense);
 
     // Balance Calculation
-    const income = elementValue("income-balance");
     const balance = parseFloat(income) - parseFloat(totalExpense);
 
     // income error checking
@@ -116,7 +118,7 @@ function saveMoneyCalculation() {
     "saving-calculation-error"
   );
   savingsCalculationErrorMessage.style.display = "none";
-  
+
   // error message for savings
   const savingsError = document.getElementById("savings-error");
   savingsError.style.display = "none";
