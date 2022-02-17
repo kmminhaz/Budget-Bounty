@@ -63,6 +63,10 @@
                       </p>
                   </div>
                 
+                  <!-- Error Message -->
+                  <p id="expences-calculation-error" class="text-center text-danger fw-bold" style="display: none;"> Please Enter 'Valid Positive' & 'Numbers' in all field</p>
+                  <p id="income-error" class="text-center text-danger fw-bold" style="display: none;"> Your expense can not be more then your income, Please Enter Right Amount for Expenses</p>
+
                   <!-- After Expense Calculation -->
                   <button type="button" class="btn btn-primary fw-bold my-3 px-5" onclick="expenceCalculation()"> Calculate </button>
                   <h4 class="fw-bold py-3">Total Expenses: <span id="total-expenses"></span></h4>
@@ -75,6 +79,10 @@
                       <button type="button" onclick="saveMoneyCalculation()" class="btn btn-primary fw-bold my-1 px-lg-5 px-md-5 px-4 mx-2"> Save </button>
                     </p>
                   </div>
+
+                  <!-- Error Message -->
+                  <p id="saving-calculation-error" class="text-center text-danger fw-bold" style="display: none;"> Please Enter 'Valid Positive' & 'Number'</p>
+                  <p id="savings-error" class="text-center text-danger fw-bold" style="display: none;"> You don't have safficiant balance to save amount of <span id="saving-amount"></span> </p>
 
                   <!-- After Parcentage Calculation -->
                   <h4 class="fw-bold my-2 py-2">Saving Amount: <span id="save-money-show"></span></h4>
