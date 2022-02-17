@@ -1,47 +1,47 @@
-const income = document.getElementById("income-balance");
-const balanceShow = document.getElementById("balance");
-
-function totalExpenses() {
-  const foodExpense = document.getElementById("foodField");
-  const foodExpenseValue = foodExpense.value;
-  const rentExpense = document.getElementById("rentField");
-  const rentExpenseValue = rentExpense.value;
-  const clotheExpense = document.getElementById("clotheField");
-  const clotheExpenseValue = clotheExpense.value;
-
-  const totalExpense =
-    parseInt(foodExpenseValue) +
-    parseInt(rentExpenseValue) +
-    parseInt(clotheExpenseValue);
-  return totalExpense;
+function elementValue(id) {
+  const elementId = document.getElementById(id);
+  const elementValue = elementId.value;
+  return elementValue;
 }
 
-function accountBalance(totalExpense) {
-  const incomeValue = income.value;
-  const accountBalance = parseInt(incomeValue) - totalExpense;
-  return accountBalance;
+function showValue(id, value) {
+  console.log(id, value);
+  const elementId = document.getElementById(id);
+  elementId.innerText = value;
 }
 
+// Expence Calculation Button Function
 function expenceCalculation() {
-  const totalExpense = totalExpenses();
-  const balance = accountBalance(totalExpense);
 
-  const totalExpenseShow = document.getElementById("total-expenses");
-  totalExpenseShow.innerText = totalExpense;
+  // Total Expence Calculation 
+  const foodExpense = elementValue("foodField");
+  const rentExpense = elementValue("rentField");
+  const clotheExpense = elementValue("clotheField");
+  const totalExpense =
+    parseFloat(foodExpense) + parseFloat(rentExpense) + parseFloat(clotheExpense);
 
-  balanceShow.innerText = balance;
+  // Balance Calculation
+  const income = elementValue("income-balance");  
+  const balance = parseFloat(income) - parseFloat(totalExpense);
+
+  // Show Value
+  showValue("total-expenses", totalExpense);
+  showValue("balance", balance)
 }
 
+// Save Money Calculation
 function saveMoneyCalculation() {
-  const saveMoneyField = document.getElementById("save-money");
-  const saveMoneyParcentage = saveMoneyField.value;
-
+  
+  // Savings Money
+  const saveMoneyParcentage = elementValue("save-money");
   const saveMoneyAmount =
-    (parseFloat(saveMoneyParcentage) * parseFloat(income.value)) / 100;
+    (parseFloat(saveMoneyParcentage) *
+      parseFloat(elementValue("income-balance"))) / 100;
+  showValue("save-money-show", saveMoneyAmount);
 
-  const saveMoneyShow = document.getElementById("save-money-show");
-  saveMoneyShow.innerText = saveMoneyAmount;
-
-  const remainingBalanceshow = document.getElementById("remainingBalance-show");
-  remainingBalanceshow.innerText = parseFloat(balanceShow.innerText) - saveMoneyAmount;
+  // Money Remaining
+  const balanceValue = document.getElementById("balance");
+  const remainingMoney =
+    parseFloat(balanceValue.innerText) - parseFloat(saveMoneyAmount);
+  showValue("remaining-balance-show", remainingMoney);
 }
